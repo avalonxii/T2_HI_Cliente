@@ -1,3 +1,4 @@
+import { async } from '@firebase/util'
 import { initializeApp } from 'firebase/app'
 import {
     collection,
@@ -18,5 +19,12 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig)
 export const db = getFirestore(app)
 
+
 //set data
-export const guardar = async(datos) => addDoc(collection(db, 'usuarios'), datos)
+export const guardar = async (datos) => {
+    try {
+        await addDoc(collection(db, 'usuarios'), datos)
+    } catch (error) {
+        console.log(error)
+    }
+}

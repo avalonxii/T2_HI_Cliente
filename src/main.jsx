@@ -4,6 +4,8 @@ import App from './App'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './index.css'
 import Despedida from './components/despedida/Despedida'
+import Mostrar from './components/mostrar/Mostrar'
+import Formulario from './components/formulario/Formulario'
 
 const router = createBrowserRouter([
     {
@@ -11,9 +13,17 @@ const router = createBrowserRouter([
         element: <App />,
     },
     {
+        path: '/mostrar',
+        element: <Mostrar />,
+    },
+    {
+        path: '/formulario',
+        element: <Formulario />,
+    },
+    {
         path: '/despedida',
         element: <Despedida />,
-    }
+    },
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
